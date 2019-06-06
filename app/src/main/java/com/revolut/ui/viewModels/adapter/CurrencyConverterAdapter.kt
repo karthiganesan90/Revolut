@@ -151,9 +151,12 @@ class CurrencyConverterAdapter(private val onAmountChangedListener: OnAmountChan
                 }
 
                 override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                    if (txtCurrencyAmount.isFocused) {
-                        onAmountChangedListener.onAmountChanged(symbol, s.toString().toFloat())
+                    if(s.toString() != null && s.toString().isNotEmpty()) {
+                        if (txtCurrencyAmount.isFocused) {
+                            onAmountChangedListener.onAmountChanged(symbol, s.toString().toFloat())
+                        }
                     }
+
                 }
 
             })

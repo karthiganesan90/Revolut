@@ -1,5 +1,6 @@
 package com.revolut.interactors.data.remote
 
+import com.revolut.BuildConfig
 import com.revolut.entities.rates.RateList
 import io.reactivex.Single
 import retrofit2.http.GET
@@ -12,7 +13,7 @@ import retrofit2.http.Query
 interface RateService {
 
     companion object {
-        const val BASE_URL = "https://revolut.duckdns.org"
+        const val BASE_URL = BuildConfig.REVOLUT_BASE_URL;
     }
 
     @GET("/latest?base=EUR")

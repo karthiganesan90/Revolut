@@ -2,11 +2,14 @@
     <string name="app_name">Revolut</string>
     <string name="action_settings">Settings</string>
 
+    <!-- Rate and conversation Tabs -->
     <string name="title_main">Rates &amp; conversions</string>
     <string name="title_rates">All Rates</string>
     <string name="title_converter">Converter</string>
     <string name="title_alerts">Alerts</string>
 
+
+    <!-- Currencys -->
     <string name="currency_aud_name">Australian dollar</string>
     <string name="currency_bgn_name">Bulgarian lev</string>
     <string name="currency_brl_name">Brazilian real</string>

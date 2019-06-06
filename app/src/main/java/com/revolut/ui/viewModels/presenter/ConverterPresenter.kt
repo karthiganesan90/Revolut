@@ -1,5 +1,6 @@
 package com.revolut.ui.viewModels.presenter
 
+import com.revolut.BuildConfig
 import com.revolut.entities.rates.Converter
 import com.revolut.entities.rates.Rate
 import com.revolut.interactors.domain.RateUsecase
@@ -39,7 +40,7 @@ class ConverterPresenter @Inject constructor(private val ratesUsecase: RateUseca
                         converterView.showLoading(true)
                     }
                 }
-                .delay(1, TimeUnit.SECONDS)
+                .delay(BuildConfig.RATE_REFRESH_FREQUENCY.toLong(), TimeUnit.SECONDS)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .repeatUntil({ viewStopped || !base.equals(currentBase, ignoreCase = true) })

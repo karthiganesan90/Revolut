@@ -15,6 +15,9 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        buildConfigField 'String', 'REVOLUT_BASE_URL', '"https://revolut.duckdns.org/"'
+        buildConfigField 'String', 'RATE_REFRESH_FREQUENCY', '"1"'
     }
     buildTypes {
         release {
@@ -48,8 +51,8 @@ dependencies {
     implementation "io.reactivex.rxjava2:rxandroid:$rx_java_version"
 
     //Retrofit
-    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
-    implementation "com.squareup.retrofit2:converter-gson:2.4.0"
-    implementation "com.squareup.okhttp3:logging-interceptor:3.9.1"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_gson_version"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okhttp_version"
 
 }
